@@ -1,0 +1,34 @@
+{
+    "relationships": [],
+    "fields": [
+        {
+            "fieldId": 1,
+            "fieldName": "firstName",
+            "fieldType": "String"
+        },
+        {
+            "fieldId": 2,
+            "fieldName": "lastName",
+            "fieldType": "String"
+        },
+        {
+            "fieldId": 3,
+            "fieldName": "middleName",
+            "fieldType": "String"
+        },
+        {
+            "fieldId": 4,
+            "fieldName": "mobile",
+            "fieldType": "String"
+        },
+        {
+            "fieldId": 5,
+            "fieldName": "email",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20160704083251",
+    "dto": "mapstruct",
+    "service": "serviceImpl",
+    "pagination": "no"
+}

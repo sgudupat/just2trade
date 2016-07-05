@@ -1,0 +1,26 @@
+{
+    "just2tradeApp": {
+        "partners" : {
+            "home": {
+                "title": "Partnerss",
+                "createLabel": "Créer un nouveau Partners",
+                "createOrEditLabel": "Créer ou éditer un Partners",
+                "search": "Search for Partners"
+            },
+            "created": "Un nouveau Partners a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Partners avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Partners avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Partners {{ id }} ?"
+            },
+            "detail": {
+                "title": "Partners"
+            },
+            "fullName": "FullName",
+            "mobile": "Mobile",
+            "email": "Email",
+            "comments": "Comments"
+        }
+    }
+}
+

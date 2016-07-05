@@ -1,0 +1,26 @@
+{
+    "just2tradeApp": {
+        "mma" : {
+            "home": {
+                "title": "Mmas",
+                "createLabel": "Create a new Mma",
+                "createOrEditLabel": "Create or edit a Mma",
+                "search": "Search for Mma"
+            },
+            "created": "A new Mma is created with identifier {{ param }}",
+            "updated": "A Mma is updated with identifier {{ param }}",
+            "deleted": "A Mma is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Mma {{ id }}?"
+            },
+            "detail": {
+                "title": "Mma"
+            },
+            "firstName": "FirstName",
+            "lastName": "LastName",
+            "middleName": "MiddleName",
+            "mobile": "Mobile",
+            "email": "Email"
+        }
+    }
+}

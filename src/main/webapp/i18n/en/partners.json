@@ -1,0 +1,25 @@
+{
+    "just2tradeApp": {
+        "partners" : {
+            "home": {
+                "title": "Partnerss",
+                "createLabel": "Create a new Partners",
+                "createOrEditLabel": "Create or edit a Partners",
+                "search": "Search for Partners"
+            },
+            "created": "A new Partners is created with identifier {{ param }}",
+            "updated": "A Partners is updated with identifier {{ param }}",
+            "deleted": "A Partners is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Partners {{ id }}?"
+            },
+            "detail": {
+                "title": "Partners"
+            },
+            "fullName": "FullName",
+            "mobile": "Mobile",
+            "email": "Email",
+            "comments": "Comments"
+        }
+    }
+}

@@ -1,0 +1,64 @@
+<div>
+    <h2 translate="just2tradeApp.mma.home.title">Mmas</h2>
+    <jh-alert></jh-alert>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4 no-padding-left">
+                <button class="btn btn-primary" ui-sref="mma.new" >
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span 
+                        translate="just2tradeApp.mma.home.createLabel">Create new Mma
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+                <tr>
+                    <th><span translate="global.field.id">ID</span></th>
+                    <th><span translate="just2tradeApp.mma.firstName">FirstName</span></th>
+                    <th><span translate="just2tradeApp.mma.lastName">LastName</span></th>
+                    <th><span translate="just2tradeApp.mma.middleName">MiddleName</span></th>
+                    <th><span translate="just2tradeApp.mma.mobile">Mobile</span></th>
+                    <th><span translate="just2tradeApp.mma.email">Email</span></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="mma in mmas track by mma.id">
+                    <td><a ui-sref="mma.detail({id:mma.id})">{{mma.id}}</a></td>
+                    <td>{{mma.firstName}}</td>
+                    <td>{{mma.lastName}}</td>
+                    <td>{{mma.middleName}}</td>
+                    <td>{{mma.mobile}}</td>
+                    <td>{{mma.email}}</td>
+                    <td class="text-right">
+                        <div class="btn-group flex-btn-group-container">
+                            <button type="submit"
+                                    ui-sref="mma.detail({id:mma.id})"
+                                    class="btn btn-info btn-sm"> 
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-xs hidden-sm" translate="entity.action.view"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="mma.edit({id:mma.id})"
+                                    class="btn btn-primary btn-sm">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                <span class="hidden-xs hidden-sm" translate="entity.action.edit"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="mma.delete({id:mma.id})"
+                                    class="btn btn-danger btn-sm">                                    
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                                <span class="hidden-xs hidden-sm" translate="entity.action.delete"></span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

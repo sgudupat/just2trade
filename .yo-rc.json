@@ -1,0 +1,24 @@
+{
+  "generator-jhipster": {
+    "baseName": "just2trade",
+    "packageName": "com.j2t.app",
+    "packageFolder": "com/j2t/app",
+    "authenticationType": "xauth",
+    "hibernateCache": "no",
+    "clusteredHttpSession": "no",
+    "websocket": "no",
+    "databaseType": "sql",
+    "devDatabaseType": "mysql",
+    "prodDatabaseType": "mysql",
+    "searchEngine": "no",
+    "useSass": false,
+    "buildTool": "maven",
+    "frontendBuilder": "gulp",
+    "enableTranslation": true,
+    "enableSocialSignIn": false,
+    "rememberMeKey": "743085258557d23f002e938940415129f6a6de66",
+    "testFrameworks": [
+      "gatling"
+    ]
+  }
+}

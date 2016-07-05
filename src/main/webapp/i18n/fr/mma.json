@@ -1,0 +1,27 @@
+{
+    "just2tradeApp": {
+        "mma" : {
+            "home": {
+                "title": "Mmas",
+                "createLabel": "Créer un nouveau Mma",
+                "createOrEditLabel": "Créer ou éditer un Mma",
+                "search": "Search for Mma"
+            },
+            "created": "Un nouveau Mma a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Mma avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Mma avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Mma {{ id }} ?"
+            },
+            "detail": {
+                "title": "Mma"
+            },
+            "firstName": "FirstName",
+            "lastName": "LastName",
+            "middleName": "MiddleName",
+            "mobile": "Mobile",
+            "email": "Email"
+        }
+    }
+}
+

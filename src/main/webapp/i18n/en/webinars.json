@@ -1,0 +1,24 @@
+{
+    "just2tradeApp": {
+        "webinars" : {
+            "home": {
+                "title": "Webinarss",
+                "createLabel": "Create a new Webinars",
+                "createOrEditLabel": "Create or edit a Webinars",
+                "search": "Search for Webinars"
+            },
+            "created": "A new Webinars is created with identifier {{ param }}",
+            "updated": "A Webinars is updated with identifier {{ param }}",
+            "deleted": "A Webinars is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Webinars {{ id }}?"
+            },
+            "detail": {
+                "title": "Webinars"
+            },
+            "fullName": "FullName",
+            "mobile": "Mobile",
+            "email": "Email"
+        }
+    }
+}

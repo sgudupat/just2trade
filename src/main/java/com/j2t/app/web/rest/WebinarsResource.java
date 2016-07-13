@@ -81,7 +81,7 @@ public class WebinarsResource {
     /**
      * GET  /webinarss -> get all the webinarss.
      */
-    @RequestMapping(value = "/webinarss",
+    @RequestMapping(value = "/webinars",
         method = RequestMethod.GET,
         produces = MediaType.APPLICATION_JSON_VALUE)
     @Timed

@@ -81,7 +81,7 @@ public class PartnersResource {
     /**
      * GET  /partnerss -> get all the partnerss.
      */
-    @RequestMapping(value = "/partnerss",
+    @RequestMapping(value = "/partners",
         method = RequestMethod.GET,
         produces = MediaType.APPLICATION_JSON_VALUE)
     @Timed

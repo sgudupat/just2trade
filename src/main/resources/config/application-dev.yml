@@ -20,8 +20,8 @@ spring:
     datasource:
         url: jdbc:mysql://localhost:3306/just2trade?useUnicode=true&characterEncoding=utf8&useSSL=false
         name:
-        username: root
-        password: pscglobal
+        username: just2trade
+        password: just2trade
         hikari:
             data-source-properties:
                 cachePrepStmts: true

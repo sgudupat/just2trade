@@ -12,8 +12,9 @@ public class XAuthConfiguration {
 
     @Bean
     public TokenProvider tokenProvider(JHipsterProperties jHipsterProperties) {
-        String secret = jHipsterProperties.getSecurity().getAuthentication().getXauth().getSecret();
-        int validityInSeconds = jHipsterProperties.getSecurity().getAuthentication().getXauth().getTokenValidityInSeconds();
-        return new TokenProvider(secret, validityInSeconds);
+        //String secret = jHipsterProperties.getSecurity().getAuthentication().getXauth().getSecret();
+        //int validityInSeconds = jHipsterProperties.getSecurity().getAuthentication().getXauth().getTokenValidityInSeconds();
+        //return new TokenProvider(secret, validityInSeconds);
+        return null;
     }
 }

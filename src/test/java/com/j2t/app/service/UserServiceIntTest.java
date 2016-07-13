@@ -1,6 +1,6 @@
 package com.j2t.app.service;
 
-import com.j2t.app.Application;
+import com.j2t.app.Just2TradeApp;
 import com.j2t.app.domain.User;
 import com.j2t.app.repository.UserRepository;
 import java.time.ZonedDateTime;
@@ -26,7 +26,7 @@ import static org.assertj.core.api.Assertions.*;
  * @see UserService
  */
 @RunWith(SpringJUnit4ClassRunner.class)
-@SpringApplicationConfiguration(classes = Application.class)
+@SpringApplicationConfiguration(classes = Just2TradeApp.class)
 @WebAppConfiguration
 @IntegrationTest
 @Transactional

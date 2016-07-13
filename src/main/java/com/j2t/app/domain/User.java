@@ -1,5 +1,7 @@
 package com.j2t.app.domain;
 
+import com.j2t.app.config.Constants;
+
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.hibernate.validator.constraints.Email;
 
@@ -9,6 +11,7 @@ import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 import java.io.Serializable;
 import java.util.HashSet;
+import java.util.Locale;
 import java.util.Set;
 import java.time.ZonedDateTime;
 
@@ -19,12 +22,14 @@ import java.time.ZonedDateTime;
 @Table(name = "jhi_user")
 public class User extends AbstractAuditingEntity implements Serializable {
 
+    private static final long serialVersionUID = 1L;
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
     @NotNull
-    @Pattern(regexp = "^[a-z0-9]*$|(anonymousUser)")
+    @Pattern(regexp = Constants.LOGIN_REGEX)
     @Size(min = 1, max = 50)
     @Column(length = 50, unique = true, nullable = false)
     private String login;
@@ -48,6 +53,7 @@ public class User extends AbstractAuditingEntity implements Serializable {
     @Column(length = 100, unique = true)
     private String email;
 
+    @NotNull
     @Column(nullable = false)
     private boolean activated = false;
 
@@ -87,8 +93,9 @@ public class User extends AbstractAuditingEntity implements Serializable {
         return login;
     }
 
+    //Lowercase the login before saving it in database
     public void setLogin(String login) {
-        this.login = login;
+        this.login = login.toLowerCase(Locale.ENGLISH);
     }
 
     public String getPassword() {

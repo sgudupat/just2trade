@@ -11,8 +11,9 @@
 # ===================================================================
 
 spring:
+    application:
+        name: just2trade
     datasource:
-        driver-class-name: org.h2.jdbcx.JdbcDataSource
         url: jdbc:h2:mem:just2trade;DB_CLOSE_DELAY=-1
         name:
         username:
@@ -58,15 +59,6 @@ jhipster:
         corePoolSize: 2
         maxPoolSize: 50
         queueCapacity: 10000
-    security:
-        authentication:
-            xauth:
-                secret: myXAuthSecret
-                # Token is valid 30 minutes
-                tokenValidityInSeconds: 1800
-        rememberme:
-            # security key (this key should be unique for your application, and kept secret)
-            key: 743085258557d23f002e938940415129f6a6de66
     metrics: # DropWizard Metrics configuration, used by MetricsConfiguration
         jmx.enabled: true
     swagger:
@@ -74,6 +66,9 @@ jhipster:
         description: just2trade API documentation
         version: 0.0.1
         termsOfServiceUrl:
-        contact:
+        contactName:
+        contactUrl:
+        contactEmail:
         license:
         licenseUrl:
+        enabled: false

@@ -1,6 +1,6 @@
 package com.j2t.app.web.rest;
 
-import com.j2t.app.Application;
+import com.j2t.app.Just2TradeApp;
 import com.j2t.app.domain.Partners;
 import com.j2t.app.repository.PartnersRepository;
 import com.j2t.app.service.PartnersService;
@@ -39,7 +39,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
  * @see PartnersResource
  */
 @RunWith(SpringJUnit4ClassRunner.class)
-@SpringApplicationConfiguration(classes = Application.class)
+@SpringApplicationConfiguration(classes = Just2TradeApp.class)
 @WebAppConfiguration
 @IntegrationTest
 public class PartnersResourceIntTest {

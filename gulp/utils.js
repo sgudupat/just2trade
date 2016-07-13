@@ -4,7 +4,8 @@ var fs = require('fs');
 
 module.exports =  {
     endsWith : endsWith,
-    parseVersion : parseVersion
+    parseVersion : parseVersion,
+    isLintFixed : isLintFixed
 }
 
 function endsWith(str, suffix) {
@@ -28,3 +29,8 @@ function parseVersion() {
     return version;
 }
 
+
+function isLintFixed(file) {
+	// Has ESLint fixed the file contents?
+	return file.eslint !== null && file.eslint.fixed;
+}

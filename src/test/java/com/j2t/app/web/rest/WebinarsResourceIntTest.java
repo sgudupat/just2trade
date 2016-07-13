@@ -1,6 +1,6 @@
 package com.j2t.app.web.rest;
 
-import com.j2t.app.Application;
+import com.j2t.app.Just2TradeApp;
 import com.j2t.app.domain.Webinars;
 import com.j2t.app.repository.WebinarsRepository;
 import com.j2t.app.service.WebinarsService;
@@ -39,7 +39,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
  * @see WebinarsResource
  */
 @RunWith(SpringJUnit4ClassRunner.class)
-@SpringApplicationConfiguration(classes = Application.class)
+@SpringApplicationConfiguration(classes = Just2TradeApp.class)
 @WebAppConfiguration
 @IntegrationTest
 public class WebinarsResourceIntTest {

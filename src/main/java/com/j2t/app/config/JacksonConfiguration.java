@@ -1,7 +1,6 @@
 package com.j2t.app.config;
 
 import com.j2t.app.domain.util.*;
-
 import com.fasterxml.jackson.databind.SerializationFeature;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 import java.time.*;

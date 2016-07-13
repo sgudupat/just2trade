@@ -4,6 +4,9 @@ import com.codahale.metrics.annotation.Timed;
 import com.j2t.app.domain.Partners;
 import com.j2t.app.service.PartnersService;
 import com.j2t.app.web.rest.util.HeaderUtil;
+
+import io.swagger.annotations.ApiOperation;
+
 import com.j2t.app.web.rest.dto.PartnersDTO;
 import com.j2t.app.web.rest.mapper.PartnersMapper;
 import org.slf4j.Logger;
@@ -59,6 +62,7 @@ public class PartnersResource {
     /**
      * PUT  /partnerss -> Updates an existing partners.
      */
+    @ApiOperation(hidden = true, value = "")
     @RequestMapping(value = "/partnerss",
         method = RequestMethod.PUT,
         produces = MediaType.APPLICATION_JSON_VALUE)
@@ -90,6 +94,7 @@ public class PartnersResource {
     /**
      * GET  /partnerss/:id -> get the "id" partners.
      */
+    @ApiOperation(hidden = true, value = "")
     @RequestMapping(value = "/partnerss/{id}",
         method = RequestMethod.GET,
         produces = MediaType.APPLICATION_JSON_VALUE)
@@ -107,6 +112,7 @@ public class PartnersResource {
     /**
      * DELETE  /partnerss/:id -> delete the "id" partners.
      */
+    @ApiOperation(hidden = true, value = "")
     @RequestMapping(value = "/partnerss/{id}",
         method = RequestMethod.DELETE,
         produces = MediaType.APPLICATION_JSON_VALUE)

@@ -3,6 +3,9 @@ package com.j2t.app.web.rest;
 import com.codahale.metrics.annotation.Timed;
 import com.j2t.app.security.xauth.Token;
 import com.j2t.app.security.xauth.TokenProvider;
+
+import io.swagger.annotations.ApiOperation;
+
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
@@ -31,7 +34,8 @@ public class UserXAuthTokenController {
 
     @Inject
     private UserDetailsService userDetailsService;
-
+    
+    @ApiOperation(hidden = true, value = "")
     @RequestMapping(value = "/authenticate",
             method = RequestMethod.POST)
     @Timed

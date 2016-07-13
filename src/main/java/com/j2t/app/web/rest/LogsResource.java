@@ -4,6 +4,8 @@ import com.j2t.app.web.rest.dto.LoggerDTO;
 
 import ch.qos.logback.classic.Level;
 import ch.qos.logback.classic.LoggerContext;
+import io.swagger.annotations.ApiOperation;
+
 import com.codahale.metrics.annotation.Timed;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
@@ -19,7 +21,7 @@ import java.util.stream.Collectors;
 @RestController
 @RequestMapping("/management/jhipster")
 public class LogsResource {
-
+	@ApiOperation(hidden = true, value = "")
     @RequestMapping(value = "/logs",
         method = RequestMethod.GET,
         produces = MediaType.APPLICATION_JSON_VALUE)
@@ -31,7 +33,7 @@ public class LogsResource {
             .map(LoggerDTO::new)
             .collect(Collectors.toList());
     }
-
+	@ApiOperation(hidden = true, value = "")
     @RequestMapping(value = "/logs",
         method = RequestMethod.PUT)
     @ResponseStatus(HttpStatus.NO_CONTENT)

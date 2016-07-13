@@ -4,6 +4,9 @@ import com.codahale.metrics.annotation.Timed;
 import com.j2t.app.domain.Mma;
 import com.j2t.app.service.MmaService;
 import com.j2t.app.web.rest.util.HeaderUtil;
+
+import io.swagger.annotations.ApiOperation;
+
 import com.j2t.app.web.rest.dto.MmaDTO;
 import com.j2t.app.web.rest.mapper.MmaMapper;
 import org.slf4j.Logger;
@@ -59,6 +62,7 @@ public class MmaResource {
     /**
      * PUT  /mmas -> Updates an existing mma.
      */
+    @ApiOperation(hidden = true, value = "")
     @RequestMapping(value = "/mmas",
         method = RequestMethod.PUT,
         produces = MediaType.APPLICATION_JSON_VALUE)
@@ -90,6 +94,7 @@ public class MmaResource {
     /**
      * GET  /mmas/:id -> get the "id" mma.
      */
+    @ApiOperation(hidden = true, value = "")
     @RequestMapping(value = "/mmas/{id}",
         method = RequestMethod.GET,
         produces = MediaType.APPLICATION_JSON_VALUE)
@@ -107,6 +112,7 @@ public class MmaResource {
     /**
      * DELETE  /mmas/:id -> delete the "id" mma.
      */
+    @ApiOperation(hidden = true, value = "")
     @RequestMapping(value = "/mmas/{id}",
         method = RequestMethod.DELETE,
         produces = MediaType.APPLICATION_JSON_VALUE)

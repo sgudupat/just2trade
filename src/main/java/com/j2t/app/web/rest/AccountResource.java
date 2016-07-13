@@ -12,6 +12,8 @@ import com.j2t.app.web.rest.dto.ManagedUserDTO;
 import com.j2t.app.web.rest.dto.UserDTO;
 import com.j2t.app.web.rest.util.HeaderUtil;
 
+import io.swagger.annotations.ApiOperation;
+
 import org.apache.commons.lang.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -53,6 +55,7 @@ public class AccountResource {
      * @param request the HTTP request
      * @return the ResponseEntity with status 201 (Created) if the user is registred or 400 (Bad Request) if the login or e-mail is already in use
      */
+    @ApiOperation(hidden = true, value = "")
     @RequestMapping(value = "/register",
                     method = RequestMethod.POST,
                     produces={MediaType.APPLICATION_JSON_VALUE, MediaType.TEXT_PLAIN_VALUE})
@@ -89,6 +92,7 @@ public class AccountResource {
      * @param key the activation key
      * @return the ResponseEntity with status 200 (OK) and the activated user in body, or status 500 (Internal Server Error) if the user couldn't be activated
      */
+    @ApiOperation(hidden = true, value = "")
     @RequestMapping(value = "/activate",
         method = RequestMethod.GET,
         produces = MediaType.APPLICATION_JSON_VALUE)
@@ -105,6 +109,7 @@ public class AccountResource {
      * @param request the HTTP request
      * @return the login if the user is authenticated
      */
+    @ApiOperation(hidden = true, value = "")
     @RequestMapping(value = "/authenticate",
         method = RequestMethod.GET,
         produces = MediaType.APPLICATION_JSON_VALUE)
@@ -119,6 +124,7 @@ public class AccountResource {
      *
      * @return the ResponseEntity with status 200 (OK) and the current user in body, or status 500 (Internal Server Error) if the user couldn't be returned
      */
+    @ApiOperation(hidden = true, value = "")
     @RequestMapping(value = "/account",
         method = RequestMethod.GET,
         produces = MediaType.APPLICATION_JSON_VALUE)
@@ -135,6 +141,7 @@ public class AccountResource {
      * @param userDTO the current user information
      * @return the ResponseEntity with status 200 (OK), or status 400 (Bad Request) or 500 (Internal Server Error) if the user couldn't be updated
      */
+    @ApiOperation(hidden = true, value = "")
     @RequestMapping(value = "/account",
         method = RequestMethod.POST,
         produces = MediaType.APPLICATION_JSON_VALUE)
@@ -160,6 +167,7 @@ public class AccountResource {
      * @param password the new password
      * @return the ResponseEntity with status 200 (OK), or status 400 (Bad Request) if the new password is not strong enough
      */
+    @ApiOperation(hidden = true, value = "")
     @RequestMapping(value = "/account/change_password",
         method = RequestMethod.POST,
         produces = MediaType.TEXT_PLAIN_VALUE)
@@ -179,6 +187,7 @@ public class AccountResource {
      * @param request the HTTP request
      * @return the ResponseEntity with status 200 (OK) if the e-mail was sent, or status 400 (Bad Request) if the e-mail address is not registred
      */
+    @ApiOperation(hidden = true, value = "")
     @RequestMapping(value = "/account/reset_password/init",
         method = RequestMethod.POST,
         produces = MediaType.TEXT_PLAIN_VALUE)
@@ -204,6 +213,7 @@ public class AccountResource {
      * @return the ResponseEntity with status 200 (OK) if the password has been reset,
      * or status 400 (Bad Request) or 500 (Internal Server Error) if the password could not be reset
      */
+    @ApiOperation(hidden = true, value = "")
     @RequestMapping(value = "/account/reset_password/finish",
         method = RequestMethod.POST,
         produces = MediaType.TEXT_PLAIN_VALUE)

@@ -4,6 +4,9 @@ import com.codahale.metrics.annotation.Timed;
 import com.j2t.app.domain.Webinars;
 import com.j2t.app.service.WebinarsService;
 import com.j2t.app.web.rest.util.HeaderUtil;
+
+import io.swagger.annotations.ApiOperation;
+
 import com.j2t.app.web.rest.dto.WebinarsDTO;
 import com.j2t.app.web.rest.mapper.WebinarsMapper;
 import org.slf4j.Logger;
@@ -59,6 +62,7 @@ public class WebinarsResource {
     /**
      * PUT  /webinarss -> Updates an existing webinars.
      */
+    @ApiOperation(hidden = true, value = "")
     @RequestMapping(value = "/webinarss",
         method = RequestMethod.PUT,
         produces = MediaType.APPLICATION_JSON_VALUE)
@@ -90,6 +94,7 @@ public class WebinarsResource {
     /**
      * GET  /webinarss/:id -> get the "id" webinars.
      */
+    @ApiOperation(hidden = true, value = "")
     @RequestMapping(value = "/webinarss/{id}",
         method = RequestMethod.GET,
         produces = MediaType.APPLICATION_JSON_VALUE)
@@ -107,6 +112,7 @@ public class WebinarsResource {
     /**
      * DELETE  /webinarss/:id -> delete the "id" webinars.
      */
+    @ApiOperation(hidden = true, value = "")
     @RequestMapping(value = "/webinarss/{id}",
         method = RequestMethod.DELETE,
         produces = MediaType.APPLICATION_JSON_VALUE)

@@ -4,6 +4,9 @@ import com.j2t.app.service.AuditEventService;
 
 import java.time.LocalDate;
 import com.j2t.app.web.rest.util.PaginationUtil;
+
+import io.swagger.annotations.ApiOperation;
+
 import org.springframework.boot.actuate.audit.AuditEvent;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -22,6 +25,7 @@ import java.util.List;
  * REST controller for getting the audit events.
  */
 @RestController
+
 @RequestMapping(value = "/management/jhipster/audits", produces = MediaType.APPLICATION_JSON_VALUE)
 public class AuditResource {
 
@@ -39,6 +43,7 @@ public class AuditResource {
      * @return the ResponseEntity with status 200 (OK) and the list of AuditEvents in body
      * @throws URISyntaxException if there is an error to generate the pagination HTTP headers
      */
+    @ApiOperation(hidden = true, value = "")
     @RequestMapping(method = RequestMethod.GET)
     public ResponseEntity<List<AuditEvent>> getAll(Pageable pageable) throws URISyntaxException {
         Page<AuditEvent> page = auditEventService.findAll(pageable);
@@ -55,7 +60,7 @@ public class AuditResource {
      * @return the ResponseEntity with status 200 (OK) and the list of AuditEvents in body
      * @throws URISyntaxException if there is an error to generate the pagination HTTP headers
      */
-
+    @ApiOperation(hidden = true, value = "")
     @RequestMapping(method = RequestMethod.GET,
         params = {"fromDate", "toDate"})
     public ResponseEntity<List<AuditEvent>> getByDates(
@@ -74,6 +79,7 @@ public class AuditResource {
      * @param id the id of the entity to get
      * @return the ResponseEntity with status 200 (OK) and the AuditEvent in body, or status 404 (Not Found)
      */
+    @ApiOperation(hidden = true, value = "")
     @RequestMapping(value = "/{id:.+}",
         method = RequestMethod.GET)
     public ResponseEntity<AuditEvent> get(@PathVariable Long id) {

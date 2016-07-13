@@ -2,6 +2,8 @@ package com.j2t.app.web.rest;
 
 import com.j2t.app.config.JHipsterProperties;
 
+import io.swagger.annotations.ApiOperation;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -22,7 +24,7 @@ public class ProfileInfoResource {
 
     @Inject
     private JHipsterProperties jHipsterProperties;
-
+    @ApiOperation(hidden = true, value = "")
     @RequestMapping(value = "/profile-info",
         method = RequestMethod.GET,
         produces = MediaType.APPLICATION_JSON_VALUE)

@@ -54,7 +54,7 @@ public class WebinarsResource {
             return ResponseEntity.badRequest().headers(HeaderUtil.createFailureAlert("webinars", "idexists", "A new webinars cannot already have an ID")).body(null);
         }
         WebinarsDTO result = webinarsService.save(webinarsDTO);
-        return ResponseEntity.created(new URI("/api/webinarss/" + result.getId()))
+        return ResponseEntity.created(new URI("/api/webinars/" + result.getId()))
             .headers(HeaderUtil.createEntityCreationAlert("webinars", result.getId().toString()))
             .body(result);
     }

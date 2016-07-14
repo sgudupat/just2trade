@@ -18,13 +18,13 @@ public class Webinars implements Serializable {
 
     @Column(name = "full_name")
     private String fullName;
-    
+
     @Column(name = "mobile")
     private String mobile;
-    
+
     @Column(name = "email")
     private String email;
-    
+
     public Long getId() {
         return id;
     }
@@ -36,7 +36,7 @@ public class Webinars implements Serializable {
     public String getFullName() {
         return fullName;
     }
-    
+
     public void setFullName(String fullName) {
         this.fullName = fullName;
     }
@@ -44,7 +44,7 @@ public class Webinars implements Serializable {
     public String getMobile() {
         return mobile;
     }
-    
+
     public void setMobile(String mobile) {
         this.mobile = mobile;
     }
@@ -52,7 +52,7 @@ public class Webinars implements Serializable {
     public String getEmail() {
         return email;
     }
-    
+
     public void setEmail(String email) {
         this.email = email;
     }
@@ -66,7 +66,7 @@ public class Webinars implements Serializable {
             return false;
         }
         Webinars webinars = (Webinars) o;
-        if(webinars.id == null || id == null) {
+        if (webinars.id == null || id == null) {
             return false;
         }
         return Objects.equals(id, webinars.id);
@@ -79,11 +79,18 @@ public class Webinars implements Serializable {
 
     @Override
     public String toString() {
-        return "Webinars{" +
+        return "Webinar{" +
             "id=" + id +
             ", fullName='" + fullName + "'" +
             ", mobile='" + mobile + "'" +
             ", email='" + email + "'" +
             '}';
+    }
+
+    public String mailContent() {
+        return fullName + " want to attend the Webinar.\n" +
+            "Contact information is:\n" +
+            "Mobile='" + mobile + "'\n" +
+            "Email='" + email + "'";
     }
 }

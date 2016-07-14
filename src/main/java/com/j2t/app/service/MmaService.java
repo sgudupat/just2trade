@@ -6,6 +6,8 @@ import com.j2t.app.web.rest.dto.MmaDTO;
 import java.util.LinkedList;
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
+
 /**
  * Service Interface for managing Mma.
  */
@@ -15,7 +17,7 @@ public interface MmaService {
      * Save a mma.
      * @return the persisted entity
      */
-    public MmaDTO save(MmaDTO mmaDTO);
+    public MmaDTO save(MmaDTO mmaDTO,HttpServletRequest httpServletRequest);
 
     /**
      *  get all the mmas.

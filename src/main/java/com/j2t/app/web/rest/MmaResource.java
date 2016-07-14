@@ -19,6 +19,8 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 
 import javax.inject.Inject;
+import javax.servlet.http.HttpServletRequest;
+
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.util.LinkedList;
@@ -48,12 +50,12 @@ public class MmaResource {
         method = RequestMethod.POST,
         produces = MediaType.APPLICATION_JSON_VALUE)
     @Timed
-    public ResponseEntity<MmaDTO> createMma(@RequestBody MmaDTO mmaDTO) throws URISyntaxException {
+    public ResponseEntity<MmaDTO> createMma(@RequestBody MmaDTO mmaDTO,HttpServletRequest httpServletRequest) throws URISyntaxException {
         log.debug("REST request to save Mma : {}", mmaDTO);
         if (mmaDTO.getId() != null) {
             return ResponseEntity.badRequest().headers(HeaderUtil.createFailureAlert("mma", "idexists", "A new mma cannot already have an ID")).body(null);
         }
-        MmaDTO result = mmaService.save(mmaDTO);
+        MmaDTO result = mmaService.save(mmaDTO,httpServletRequest);
         return ResponseEntity.created(new URI("/api/mmas/" + result.getId()))
             .headers(HeaderUtil.createEntityCreationAlert("mma", result.getId().toString()))
             .body(result);
@@ -67,12 +69,12 @@ public class MmaResource {
         method = RequestMethod.PUT,
         produces = MediaType.APPLICATION_JSON_VALUE)
     @Timed
-    public ResponseEntity<MmaDTO> updateMma(@RequestBody MmaDTO mmaDTO) throws URISyntaxException {
+    public ResponseEntity<MmaDTO> updateMma(@RequestBody MmaDTO mmaDTO,HttpServletRequest httpServletRequest) throws URISyntaxException {
         log.debug("REST request to update Mma : {}", mmaDTO);
         if (mmaDTO.getId() == null) {
-            return createMma(mmaDTO);
+            return createMma(mmaDTO,httpServletRequest);
         }
-        MmaDTO result = mmaService.save(mmaDTO);
+        MmaDTO result = mmaService.save(mmaDTO,httpServletRequest);
         return ResponseEntity.ok()
             .headers(HeaderUtil.createEntityUpdateAlert("mma", mmaDTO.getId().toString()))
             .body(result);

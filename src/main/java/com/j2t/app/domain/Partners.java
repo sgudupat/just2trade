@@ -98,4 +98,11 @@ public class Partners implements Serializable {
             ", comments='" + comments + "'" +
             '}';
     }
+    
+    public String mailContent() {
+        return fullName + " want to be partner.\n" +
+            "Contact information is:\n" +
+            "Mobile='" + mobile + "'\n" +
+            "Email='" + email + "'";
+    }
 }

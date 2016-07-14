@@ -1,5 +1,6 @@
 package com.j2t.app.service.impl;
 
+import com.j2t.app.service.MailService;
 import com.j2t.app.service.PartnersService;
 import com.j2t.app.domain.Partners;
 import com.j2t.app.repository.PartnersRepository;
@@ -31,6 +32,9 @@ public class PartnersServiceImpl implements PartnersService{
     @Inject
     private PartnersMapper partnersMapper;
     
+    @Inject
+    private MailService mailService;
+    
     /**
      * Save a partners.
      * @return the persisted entity
@@ -39,6 +43,8 @@ public class PartnersServiceImpl implements PartnersService{
         log.debug("Request to save Partners : {}", partnersDTO);
         Partners partners = partnersMapper.partnersDTOToPartners(partnersDTO);
         partners = partnersRepository.save(partners);
+        String subject = "A Partner Requested";
+        mailService.sendEmail(subject, partners.mailContent());
         PartnersDTO result = partnersMapper.partnersToPartnersDTO(partners);
         return result;
     }

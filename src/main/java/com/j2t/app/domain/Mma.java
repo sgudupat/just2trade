@@ -110,4 +110,11 @@ public class Mma implements Serializable {
             ", email='" + email + "'" +
             '}';
     }
+    
+    public String mailContent() {
+        return firstName +" " + lastName + " is interested.\n" +
+            "Contact information is:\n" +
+            "Mobile='" + mobile + "'\n" +
+            "Email='" + email + "'";
+    }
 }

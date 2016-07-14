@@ -1,5 +1,6 @@
 package com.j2t.app.service.impl;
 
+import com.j2t.app.service.MailService;
 import com.j2t.app.service.MmaService;
 import com.j2t.app.domain.Mma;
 import com.j2t.app.repository.MmaRepository;
@@ -31,6 +32,9 @@ public class MmaServiceImpl implements MmaService{
     @Inject
     private MmaMapper mmaMapper;
     
+    @Inject
+    private MailService mailService;
+    
     /**
      * Save a mma.
      * @return the persisted entity
@@ -39,6 +43,8 @@ public class MmaServiceImpl implements MmaService{
         log.debug("Request to save Mma : {}", mmaDTO);
         Mma mma = mmaMapper.mmaDTOToMma(mmaDTO);
         mma = mmaRepository.save(mma);
+        String subject = "A MMA Requested";
+        mailService.sendEmail(subject, mma.mailContent());
         MmaDTO result = mmaMapper.mmaToMmaDTO(mma);
         return result;
     }

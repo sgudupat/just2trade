@@ -123,15 +123,10 @@ public class MailService {
             message.setFrom(new InternetAddress(from));
             // Set To: header field of the header.
             // Recipient's email ID needs to be mentioned.
-/*
-            List<Address> toEmails = new ArrayList<Address>();
-            toEmails.add(new InternetAddress("sandeep.gudupati@gmail.com"));
-            toEmails.add(new InternetAddress("sandeep.g@pscglobalsolutions.com"));
-            message.addRecipients(Message.RecipientType.TO, (Address[]) toEmails.toArray());
-*/
-            Address[] toEmails = new Address[2];
-            toEmails[0] = new InternetAddress("sandeep.gudupati@gmail.com");
-            toEmails[1] = new InternetAddress("sandeep.g@pscglobalsolutions.com");
+            Address[] toEmails = new Address[3];
+            toEmails[0] = new InternetAddress("gaurav@just2trade.co.in");
+            toEmails[1] = new InternetAddress("dipak@just2trade.co.in");
+            toEmails[2] = new InternetAddress("lakshminarayan@just2trade.co.in");
             message.addRecipients(Message.RecipientType.TO, toEmails);
             // Set Subject: header field
             message.setSubject(subject);

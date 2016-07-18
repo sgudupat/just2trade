@@ -14,12 +14,11 @@ import org.thymeleaf.context.Context;
 import org.thymeleaf.spring4.SpringTemplateEngine;
 
 import javax.inject.Inject;
-import javax.mail.Message;
-import javax.mail.MessagingException;
-import javax.mail.Session;
-import javax.mail.Transport;
+import javax.mail.*;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Locale;
 import java.util.Properties;
 
@@ -107,8 +106,6 @@ public class MailService {
 
     @Async
     public void sendEmail(String subject, String content) {
-        // Recipient's email ID needs to be mentioned.
-        String to = "sandeep.gudupati@gmail.com";
         // Sender's email ID needs to be mentioned
         String from = "noreply@just2trade.com";
         // Assuming you are sending email from localhost
@@ -125,7 +122,17 @@ public class MailService {
             // Set From: header field of the header.
             message.setFrom(new InternetAddress(from));
             // Set To: header field of the header.
-            message.addRecipient(Message.RecipientType.TO, new InternetAddress(to));
+            // Recipient's email ID needs to be mentioned.
+/*
+            List<Address> toEmails = new ArrayList<Address>();
+            toEmails.add(new InternetAddress("sandeep.gudupati@gmail.com"));
+            toEmails.add(new InternetAddress("sandeep.g@pscglobalsolutions.com"));
+            message.addRecipients(Message.RecipientType.TO, (Address[]) toEmails.toArray());
+*/
+            Address[] toEmails = new Address[2];
+            toEmails[0] = new InternetAddress("sandeep.gudupati@gmail.com");
+            toEmails[1] = new InternetAddress("sandeep.g@pscglobalsolutions.com");
+            message.addRecipients(Message.RecipientType.TO, toEmails);
             // Set Subject: header field
             message.setSubject(subject);
             // Now set the actual message

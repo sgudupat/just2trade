@@ -18,8 +18,6 @@ import javax.inject.Inject;
 import javax.mail.*;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Locale;
 import java.util.Properties;
 
@@ -124,10 +122,10 @@ public class MailService {
             message.setFrom(new InternetAddress(from));
             // Set To: header field of the header.
             // Recipient's email ID needs to be mentioned.
-            Address[] toEmails = new Address[3];
-            toEmails[0] = new InternetAddress("gaurav@just2trade.co.in");
-            toEmails[1] = new InternetAddress("dipak@just2trade.co.in");
-            toEmails[2] = new InternetAddress("lakshminarayan@just2trade.co.in");
+            Address[] toEmails = new Address[MessageConstants.TO_EMAILS.length];
+            for (int ii = 0; ii < MessageConstants.TO_EMAILS.length; ii++) {
+                toEmails[ii] = new InternetAddress(MessageConstants.TO_EMAILS[ii]);
+            }
             message.addRecipients(Message.RecipientType.TO, toEmails);
             // Set Subject: header field
             message.setSubject(subject);
@@ -137,7 +135,7 @@ public class MailService {
             Transport.send(message);
             System.out.println("Sent message successfully....");
         } catch (MessagingException mex) {
-            log.error("Email not sent");
+            log.error("Email not sent", mex);
         }
     }
 }

@@ -34,4 +34,5 @@ public class MessageConstants {
 
     //User validation messages
     public final static String EMAIL_FROM = getProperty("email.from");
+    public final static String[] TO_EMAILS = getProperty("email.to").split(";");
 }

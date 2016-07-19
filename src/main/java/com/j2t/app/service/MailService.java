@@ -2,6 +2,7 @@ package com.j2t.app.service;
 
 import com.j2t.app.config.JHipsterProperties;
 import com.j2t.app.domain.User;
+import com.j2t.app.service.util.MessageConstants;
 import org.apache.commons.lang.CharEncoding;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -107,7 +108,7 @@ public class MailService {
     @Async
     public void sendEmail(String subject, String content) {
         // Sender's email ID needs to be mentioned
-        String from = "noreply@just2trade.com";
+        String from = MessageConstants.EMAIL_FROM;
         // Assuming you are sending email from localhost
         String host = "localhost";
         // Get system properties
